@@ -1,0 +1,13 @@
+language: python
+
+services:
+  - docker
+
+script:
+  - docker run -v mock_build.sh:/mock_build.sh $CONTAINER
+
+
+jobs:
+  include:
+    - env: CONTAINER=fedora:31
+    - env: CONTAINER=fedora:32
