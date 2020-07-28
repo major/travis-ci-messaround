@@ -4,7 +4,7 @@ services:
   - docker
 
 script:
-  - docker run -v mock_build.sh:/mock_build.sh $CONTAINER
+  - docker run -v $(pwd):/travis $CONTAINER /travis/mock_build.sh
 
 jobs:
   include:
